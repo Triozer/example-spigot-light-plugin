@@ -1,0 +1,11 @@
+name: LightPlugin
+
+main: fr.triozer.example.spigot.lightplugin.Main
+version: 1.0
+description: Show information about a player.
+
+author: Cédric
+
+commands:
+    lightplugin:
+        description: Show information about a player.
