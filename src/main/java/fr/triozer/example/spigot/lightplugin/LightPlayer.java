@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -38,18 +37,25 @@ public class LightPlayer {
         
         long time = System.currentTimeMillis() - connection;
         
-        SimpleDateFormat format = new SimpleDateFormat("mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
         
-        if (time > 3600000)
-            format = new SimpleDateFormat("hh:mm:ss");
+        if (time > 60)
+            dateFormat = new SimpleDateFormat("mm:ss");
+        else if (time > 3600000)
+            dateFormat = new SimpleDateFormat("hh:mm:ss");
         
-        player.sendMessage("Données reccueillies du joueur depuis: §a" + format.format(time));
+        player.sendMessage("Données reccueillies du joueur depuis: §a" + dateFormat.format(time));
         player.sendMessage("");
         player.sendMessage("Vie du joueur: §c" + target.getHealth());
         player.sendMessage("Niveau de nourriture du joueur: §6" + target.getFoodLevel());
         player.sendMessage("Blocs cassés: §a" + breakedBlocks);
         player.sendMessage("Blocs placés: §a" + placedBlocks);
-        player.sendMessage("Entités tuées: §e" + (killedMobs + killedPlayers) + " §7(" + killedMobs + " entités et " + killedPlayers + " joueurs)");
+        
+        if (killedMobs + killedPlayers > 1)
+            player.sendMessage("Entités tuées: §e" + (killedMobs + killedPlayers) + " §7(" + killedMobs + " entités et " + killedPlayers + " joueurs)");
+        else
+            player.sendMessage("Entité tuée: §e" + (killedMobs + killedPlayers) + " §7(" + killedMobs + " entité et " + killedPlayers + " joueur)");
+        
         player.sendMessage("Morts: §e" + deaths);
         player.sendMessage("Mots envoyés: §e" + words);
         player.sendMessage("");
