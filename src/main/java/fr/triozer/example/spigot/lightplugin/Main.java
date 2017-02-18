@@ -1,5 +1,6 @@
 package fr.triozer.example.spigot.lightplugin;
 
+import fr.triozer.api.TrioAPI;
 import fr.triozer.example.spigot.lightplugin.command.LightPluginCommand;
 import fr.triozer.example.spigot.lightplugin.listener.*;
 import org.bukkit.Bukkit;
@@ -14,7 +15,12 @@ import java.util.UUID;
  */
 public class Main extends JavaPlugin {
     private static Main                   instance;
+    private static TrioAPI                api;
     private        Map<UUID, LightPlayer> lightPlayers;
+    
+    public static TrioAPI getApi() {
+        return api;
+    }
     
     public static Main getInstance() {
         return instance;
@@ -23,6 +29,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        api = TrioAPI.getInstance();
         lightPlayers = new HashMap<>();
         
         registerListeners();
@@ -51,7 +58,7 @@ public class Main extends JavaPlugin {
         lightPlayers.remove(uuid);
     }
     
-    public LightPlayer getLightplayer(UUID uuid) {
+    public LightPlayer getLightPlayer(UUID uuid) {
         return lightPlayers.get(uuid);
     }
 }

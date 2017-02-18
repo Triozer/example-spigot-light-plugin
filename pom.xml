@@ -57,7 +57,7 @@
             <groupId>fr.triozer</groupId>
             <artifactId>api</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
         <!--Spigot API-->
         <dependency>

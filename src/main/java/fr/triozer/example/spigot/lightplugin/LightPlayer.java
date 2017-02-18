@@ -39,7 +39,7 @@ public class LightPlayer {
         
         SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
         
-        if (time > 60)
+        if (time > 60000)
             dateFormat = new SimpleDateFormat("mm:ss");
         else if (time > 3600000)
             dateFormat = new SimpleDateFormat("hh:mm:ss");

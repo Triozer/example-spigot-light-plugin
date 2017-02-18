@@ -13,7 +13,7 @@ public class PlayerChat implements Listener {
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event) {
         for (int i = 0; i < event.getMessage().split(" ").length; i++)
-            Main.getInstance().getLightplayer(event.getPlayer().getUniqueId()).addWord();
+            Main.getInstance().getLightPlayer(event.getPlayer().getUniqueId()).addWord();
     }
     
 }

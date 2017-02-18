@@ -12,7 +12,7 @@ public class BlockPlace implements Listener {
     
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
-        Main.getInstance().getLightplayer(event.getPlayer().getUniqueId()).placeBlock();
+        Main.getInstance().getLightPlayer(event.getPlayer().getUniqueId()).placeBlock();
     }
     
 }

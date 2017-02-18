@@ -14,7 +14,7 @@ public class EntityDeath implements Listener {
     @EventHandler
     public void onEntityDeath(EntityDeathEvent event) {
         if (!(event.getEntity() instanceof Player) && event.getEntity().getKiller() != null)
-            Main.getInstance().getLightplayer(event.getEntity().getKiller().getUniqueId()).killMob();
+            Main.getInstance().getLightPlayer(event.getEntity().getKiller().getUniqueId()).killMob();
     }
     
 }

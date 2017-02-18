@@ -12,7 +12,7 @@ public class BlockBreak implements Listener {
     
     @EventHandler
     public void onBlockBreack(BlockBreakEvent event) {
-        Main.getInstance().getLightplayer(event.getPlayer().getUniqueId()).breakBlock();
+        Main.getInstance().getLightPlayer(event.getPlayer().getUniqueId()).breakBlock();
     }
     
 }

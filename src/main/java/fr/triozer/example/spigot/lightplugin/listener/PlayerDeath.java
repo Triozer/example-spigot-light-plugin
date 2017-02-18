@@ -12,10 +12,10 @@ public class PlayerDeath implements Listener {
     
     @EventHandler
     public void onDeathOrKill(PlayerDeathEvent event) {
-        Main.getInstance().getLightplayer(event.getEntity().getUniqueId()).addDeath();
+        Main.getInstance().getLightPlayer(event.getEntity().getUniqueId()).addDeath();
         
         if (event.getEntity().getKiller() != null)
-            Main.getInstance().getLightplayer(event.getEntity().getKiller().getUniqueId()).killPlayer();
+            Main.getInstance().getLightPlayer(event.getEntity().getKiller().getUniqueId()).killPlayer();
     }
     
 }
